@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: fe5fe04c6315aea4cb6f14d307ffe090
-timeCreated: 1479235476
+guid: b99e5cd80ec6e114ab0d414e682e4946
+timeCreated: 1479237323
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Chessboar
+    100000: Chessboar
+    100002: //RootNode
     100004: W Bishop 003
     100006: W Bishop 004
     100008: W Bishop 1
@@ -39,8 +39,8 @@ ModelImporter:
     100062: W Tower 2
     100064: W Towre 002
     100066: W Towre 1
-    400000: //RootNode
-    400002: Chessboar
+    400000: Chessboar
+    400002: //RootNode
     400004: W Bishop 003
     400006: W Bishop 004
     400008: W Bishop 1
@@ -139,40 +139,39 @@ ModelImporter:
     3300060: W Tower 2
     3300062: W Towre 002
     3300064: W Towre 1
-    4300000: W Towre 1
-    4300002: W Horse 1
-    4300004: W Bishop 1
-    4300006: W Queen
-    4300008: W Pawn 1
-    4300010: W King
-    4300012: W Bishop 2
-    4300014: W Horse 2
-    4300016: W Tower 2
-    4300018: W Pawn 2
-    4300020: W Pawn 3
-    4300022: W Pawn 4
-    4300024: W Pawn 5
-    4300026: W Pawn 6
-    4300028: W Pawn 7
-    4300030: W Pawn 8
+    4300000: W Pawn 016
+    4300002: W Pawn 015
+    4300004: W Pawn 014
+    4300006: W Pawn 013
+    4300008: W Pawn 012
+    4300010: W Pawn 011
+    4300012: W Pawn 010
+    4300014: W Tower 003
+    4300016: W Horse 004
+    4300018: W Bishop 004
+    4300020: W King001
+    4300022: W Pawn 009
+    4300024: W Queen001
+    4300026: W Bishop 003
+    4300028: W Horse 003
+    4300030: W Towre 002
     4300032: Chessboar
-    4300034: W Towre 002
-    4300036: W Horse 003
-    4300038: W Bishop 003
-    4300040: W Queen001
-    4300042: W Pawn 009
-    4300044: W King001
-    4300046: W Bishop 004
-    4300048: W Horse 004
-    4300050: W Tower 003
-    4300052: W Pawn 010
-    4300054: W Pawn 011
-    4300056: W Pawn 012
-    4300058: W Pawn 013
-    4300060: W Pawn 014
-    4300062: W Pawn 015
-    4300064: W Pawn 016
-    9500000: //RootNode
+    4300034: W Pawn 8
+    4300036: W Pawn 7
+    4300038: W Pawn 6
+    4300040: W Pawn 5
+    4300042: W Pawn 4
+    4300044: W Pawn 3
+    4300046: W Pawn 2
+    4300048: W Tower 2
+    4300050: W Horse 2
+    4300052: W Bishop 2
+    4300054: W King
+    4300056: W Pawn 1
+    4300058: W Queen
+    4300060: W Bishop 1
+    4300062: W Horse 1
+    4300064: W Towre 1
   materials:
     importMaterials: 1
     materialName: 0
@@ -231,7 +230,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
