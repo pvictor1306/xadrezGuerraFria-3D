@@ -153,7 +153,7 @@ namespace Xadrez {
             }
 
             //#jogadaespecial en passant
-            if(p is Peao && (destino.linha == origem.linha -2 || destino.linha == origem.linha + 2)) {
+            if (p is Peao && (destino.linha == origem.linha -2 || destino.linha == origem.linha + 2)) {
                 vulneravelEnPassant = p;
             }
             else {
