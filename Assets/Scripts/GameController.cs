@@ -85,12 +85,7 @@ class GameController : MonoBehaviour {
                         else {
                             estado = Estado.AguardandoJogada;
                             informarAguardando();
-                            if (partida.xeque) {
-                                txtXeque.text = "XEQUE";
-                            }
-                            else {
-                                txtXeque.text = "";
-                            }
+                            txtXeque.text = (partida.xeque) ? "XEQUE" : "";
                         }
                     }
                     catch (TabuleiroException e) {
