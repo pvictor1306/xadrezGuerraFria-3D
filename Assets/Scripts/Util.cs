@@ -13,7 +13,16 @@ class Util : MonoBehaviour {
 
     }
 
-	public static Vector3 posicaoNaCena(char coluna, int linha) {
+    public static void instanciarTorre(char coluna, int linha, Cor cor, PartidaDeXadrez partida, GameObject prefab) {
+        Vector3 pos = posicaoNaCena(coluna, linha);
+        GameObject torre = Instantiate(prefab, pos, Quaternion.identity) as GameObject;
+        Peca peca = new Torre(partida.tab, cor, partida, torre);
+        partida.colocarNovaPeca(coluna, linha, peca);
+        torre.GetComponent<ReferenciaPeca>().peca = peca;
+
+    }
+
+    public static Vector3 posicaoNaCena(char coluna, int linha) {
         Vector3 posChao = GameObject.Find("planoDasPecas").transform.position;
         Vector3 posCasa = GameObject.Find("" + coluna + linha).transform.position;
         return new Vector3(posCasa.x, posChao.y, posCasa.z);
