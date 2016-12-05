@@ -84,7 +84,7 @@ class GameController : MonoBehaviour {
 
     }
 
-    public void processarMouseDown(GameObject peca, GameObject casa) {
+    public void processarMouseDown(GameObject obj, GameObject casa) {
         if(estado == Estado.AguardandoJogada) {
             if(casa != null) {
                 try {
@@ -92,34 +92,39 @@ class GameController : MonoBehaviour {
                     int linha = casa.name[1] - '0';
                     origem = new PosicaoXadrez(coluna, linha);
                     partida.validarPosicaoDeOrigem(origem.toPosicao());
-                    pecaEscolhida = peca;
+                    pecaEscolhida = obj;
                     estado = Estado.Arrastando;
-                    txtMsg.text = "Solte a peça na casa de destino";
+                    txtMsg.text = "Selecione a casa de destino";
                 }
                 catch (TabuleiroException e) {
                     informarAviso(e.Message);
                 }
             }
         }
-    }
-        
-        public void processarMouseUp(GameObject peca, GameObject casa) {
-        if (estado == Estado.Arrastando) {
-            if (casa != null) {
-                if(pecaEscolhida != null && pecaEscolhida == peca) {
+        else if (estado == Estado.Arrastando) {
+            GameObject casaDestino = null;
+            if (obj.layer == LayerMask.NameToLayer("Casas")) {
+                casaDestino = obj;
+            }
+            else {
+                casaDestino = casa;
+            }
+
+
+            if (casaDestino != null && pecaEscolhida != null) {
                     try {
-                        char coluna = casa.name[0];
-                        int linha = casa.name[1] - '0';
+                        char coluna = casaDestino.name[0];
+                        int linha = casaDestino.name[1] - '0';
                         destino = new PosicaoXadrez(coluna, linha);
 
                         partida.validarPosicaoDeDestino(origem.toPosicao(), destino.toPosicao());
                         Peca pecaCapturada = partida.realizaJogada(origem.toPosicao(), destino.toPosicao());
 
-                        if(pecaCapturada != null) {
+                        if (pecaCapturada != null) {
                             removerObjetoCapturado(pecaCapturada);
                         }
 
-                        peca.transform.position = Util.posicaoNaCena(coluna, linha);
+                        pecaEscolhida.transform.position = Util.posicaoNaCena(coluna, linha);
 
                         tratarJogadasEspeciais();
 
@@ -137,18 +142,15 @@ class GameController : MonoBehaviour {
                         }
                     }
                     catch (TabuleiroException e) {
-                        peca.transform.position = Util.posicaoNaCena(origem.coluna, origem.linha);
+                        pecaEscolhida.transform.position = Util.posicaoNaCena(origem.coluna, origem.linha);
                         estado = Estado.AguardandoJogada;
                         informarAviso(e.Message);
                     }
 
                 }
-            }
         }
-
-
     }
-
+        
         void informarAviso(string msg) {
         txtMsg.color = Color.red;
         txtMsg.text = msg;
